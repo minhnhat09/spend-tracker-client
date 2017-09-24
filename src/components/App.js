@@ -8,11 +8,9 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          <div>
             <div>
               <Route exact path="/" component={Landing} />
             </div>
-          </div>
         </BrowserRouter>
       </div>
     );

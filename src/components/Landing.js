@@ -1,16 +1,11 @@
 import React, { Component } from "react";
-import AppBar from "material-ui/AppBar";
-import SimpleDrawer from './SimpleDrawer';
+import AppBarHeader from "./AppBarHeader";
 import Main from "./Main";
 class Landing extends Component {
   render() {
     return (
       <div>
-        <AppBar
-          title="Title"
-          iconClassNameRight="muidocs-icon-navigation-expand-more"
-        />
-        <SimpleDrawer />
+        <AppBarHeader />
         <Main />
       </div>
     );
