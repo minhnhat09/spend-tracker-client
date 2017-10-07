@@ -24,9 +24,11 @@ class Landing extends Component {
 
   render() {
     return (
-      <Grid container spacing={40}>
-        {this.renderPeople()}
-      </Grid>
+      <div>
+        <Grid container spacing={8}>
+          {this.renderPeople()}
+        </Grid>
+      </div>
     );
   }
 }

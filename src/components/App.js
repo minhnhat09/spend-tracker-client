@@ -5,7 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import Thunk from 'redux-thunk';
 import Landing from "./Landing";
 import reducers from '../reducers';
-
+import PersistentDrawer from './PersistentDrawer';
 
 const createStoreWithMiddleware = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(Thunk));
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
       <Provider store={createStoreWithMiddleware}>
         <BrowserRouter>
             <div>
-              <Route exact path="/" component={Landing} />
+              <Route exact path="/" component={PersistentDrawer} />
             </div>
         </BrowserRouter>
       </Provider>
