@@ -5,8 +5,8 @@ export default (state = initialState, action) => {
     case FETCH_PEOPLE:
       return {
         ...state,
-        people: action.payload,
-    }
+        people: action.payload
+      };
 
     default:
       return state;
