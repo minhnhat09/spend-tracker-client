@@ -1,19 +1,19 @@
 // @flow weak
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
-import Divider from 'material-ui/Divider';
-import InboxIcon from 'material-ui-icons/Inbox';
-import DraftsIcon from 'material-ui-icons/Drafts';
-
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "material-ui/styles";
+import List, { ListItem, ListItemIcon, ListItemText } from "material-ui/List";
+import Divider from "material-ui/Divider";
+import InboxIcon from "material-ui-icons/Inbox";
+import DraftsIcon from "material-ui-icons/Drafts";
+import { Link } from "react-router-dom";
 const styles = theme => ({
   root: {
-    width: '100%',
+    width: "100%",
     maxWidth: 360,
-    background: theme.palette.background.paper,
-  },
+    background: theme.palette.background.paper
+  }
 });
 
 function SimpleList(props) {
@@ -22,9 +22,11 @@ function SimpleList(props) {
     <div className={classes.root}>
       <List>
         <ListItem button>
-          <ListItemIcon>
-            <InboxIcon />
-          </ListItemIcon>
+          <Link to="/simple">
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+          </Link>
           <ListItemText primary="Inbox" />
         </ListItem>
         <ListItem button>
@@ -48,7 +50,7 @@ function SimpleList(props) {
 }
 
 SimpleList.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(SimpleList);
