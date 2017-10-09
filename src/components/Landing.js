@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchPeople } from "../actions";
-import PeopleItem from "./PeopleItem";
 import Grid from "material-ui/Grid";
+// COMPONENTS
+import FloatingActionButton from "./FloatingActionButton";
+import PeopleItem from "./PeopleItem";
 class Landing extends Component {
   componentDidMount() {
     this.props.fetchPeople();
@@ -27,6 +29,7 @@ class Landing extends Component {
       <div>
         <Grid container spacing={8}>
           {this.renderPeople()}
+          <FloatingActionButton />
         </Grid>
       </div>
     );

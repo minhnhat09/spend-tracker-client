@@ -1,9 +1,15 @@
-/* eslint-disable flowtype/require-valid-file-annotation */
-
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "material-ui/styles";
 import classNames from "classnames";
+// REDUX
+import { createStore, applyMiddleware } from "redux";
+import Thunk from "redux-thunk";
+import reducers from "../reducers";
+import { Provider } from "react-redux";
+// ROUTERS
+import { BrowserRouter, Route } from "react-router-dom";
+// MATERIAL UI
+import { withStyles } from "material-ui/styles";
 import Drawer from "material-ui/Drawer";
 import AppBar from "material-ui/AppBar";
 import Toolbar from "material-ui/Toolbar";
@@ -11,14 +17,13 @@ import Typography from "material-ui/Typography";
 import IconButton from "material-ui/IconButton";
 import MenuIcon from "material-ui-icons/Menu";
 import ChevronLeftIcon from "material-ui-icons/ChevronLeft";
+// COMPONENTS
 import Landing from "./Landing";
 import SimpleList from "./SimpleList";
-import { BrowserRouter, Route } from "react-router-dom";
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-import Thunk from "redux-thunk";
-import reducers from "../reducers";
-import SimpleBadge from "./SimpleBadge";
+import Spending from "./Spending";
+
+
+
 const drawerWidth = 240;
 const createStoreWithMiddleware = createStore(
   reducers,
@@ -141,7 +146,7 @@ class App extends React.Component {
                     <MenuIcon />
                   </IconButton>
                   <Typography type="title" color="inherit" noWrap>
-                    Persistent drawer
+                    Personal Assistant
                   </Typography>
                 </Toolbar>
               </AppBar>
@@ -169,8 +174,9 @@ class App extends React.Component {
               >
                 <div>
                   <Route exact path="/" component={Landing} />
-                  <Route exact path="/simple" component={SimpleBadge} />
+                  <Route exact path="/spending" component={Spending} />
                 </div>
+                
               </main>
             </div>
           </div>

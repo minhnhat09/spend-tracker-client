@@ -21,20 +21,22 @@ function SimpleList(props) {
   return (
     <div className={classes.root}>
       <List>
-        <ListItem button>
-          <Link to="/simple">
+        <Link to="/simple" style={{ textDecoration: "none" }}>
+          <ListItem button>
             <ListItemIcon>
               <InboxIcon />
             </ListItemIcon>
-          </Link>
-          <ListItemText primary="Inbox" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <DraftsIcon />
-          </ListItemIcon>
-          <ListItemText primary="Drafts" />
-        </ListItem>
+            <ListItemText primary="Inbox" />
+          </ListItem>
+        </Link>
+        <Link to="/spending" style={{ textDecoration: "none" }}>
+          <ListItem button>
+            <ListItemIcon>
+              <DraftsIcon />
+            </ListItemIcon>
+            <ListItemText primary="Drafts" />
+          </ListItem>
+        </Link>
       </List>
       <Divider />
       <List>
